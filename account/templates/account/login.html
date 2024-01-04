@@ -1,0 +1,42 @@
+{% extends "simple.html" %}
+{% load static %}
+{% block content %}
+
+    <!-- Contact Start -->
+    <div class="container-fluid">
+        <h2 class="section-title position-relative text-uppercase text-center mx-xl-5 mb-4"><span class="bg-secondary pr-3">Login</span></h2>
+        <div class=" px-xl-5">
+            <div class=" mb-5 contact-us" style="">
+                <div class="contact-form bg-light p-30">
+                    <div id="success"></div>
+                    <form method="POST" id="loginForm" novalidate="novalidate">
+                        {% csrf_token %}
+                        <div class="control-group">
+                            {% for error in form.phone.errors  %}
+                            <p class="alert alert-danger">{{error}}</p>
+                            {% endfor %}
+                            <label>Phone number</label>
+                            {{form.phone}}
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <label>Password</label>
+                            {{form.password}}
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div>
+                            <button class="btn btn-primary py-2 px-4" type="submit" id="sendMessageButton">Login</button>
+                        </div>
+                    </form>
+                    <p class="help-block text-danger"></p>
+                    <div>
+                        <p>Don't have an account? <a href="{% url 'account:register' %}">Sign up</a></p>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+    <!-- Contact End -->
+    
+{% endblock content %}

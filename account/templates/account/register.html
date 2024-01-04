@@ -1,0 +1,54 @@
+{% extends "simple.html" %}
+{% load static %}
+{% block content %}
+
+    <!-- Contact Start -->
+    <div class="container-fluid">
+        <h2 class="section-title position-relative text-uppercase text-center mx-xl-5 mb-4"><span class="bg-secondary pr-3">Register</span></h2>
+        <div class=" px-xl-5">
+            <div class=" mb-5 contact-us" style="">
+                <div class="contact-form bg-light p-30">
+                    <div id="success"></div>
+                    <form  method="POST" novalidate="novalidate" >
+                        {% csrf_token %}
+                        <div class="control-group">
+                            {% for error in form.non_field_errors %}
+                            <p class="alert alert-danger">{{error}}</p>
+                            {% endfor %}
+                            <label>Create your username</label>
+                            {{form.username}}
+                            <p class="help-block text-danger"></p>
+                            {% for error in form.username.errors  %}
+                            <p class="alert alert-danger">{{error}}</p>
+                            {% endfor %}
+                            <label>Enter your phone number</label>
+                            {{form.phone}}
+                            <p class="help-block text-danger"></p>
+                            {% for error in form.phone.errors  %}
+                            <p class="alert alert-danger">{{error}}</p>
+                            {% endfor %}
+                            <label>Create password</label>
+                            {{form.password}}
+                            <p class="help-block text-danger"></p>
+                            {% for error in form.password.errors  %}
+                            <p class="alert alert-danger">{{error}}</p>
+                            {% endfor %}
+                            <label>Confirm password</label>
+                            {{form.password_1}}
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div>
+                            <button class="btn btn-primary py-2 px-4" type="submit" id="sendMessageButton">Register</button>
+                        </div>
+                    </form>
+                    <p class="help-block text-danger"></p>
+                    <div>
+                        <p>Already have an account? <a href="{% url 'account:login' %}">Login</a></p>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+    <!-- Contact End -->
+{% endblock content %}
