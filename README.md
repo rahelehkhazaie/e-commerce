@@ -1,20 +1,10 @@
-<div align="center">
-<img width="30%" src="https://user-images.githubusercontent.com/72341453/134747028-7e2d90cc-a92f-4f66-815e-54a0d50cca54.PNG">
-
-# StudyBuddy
+# e-commerce
 </div>
-
-### Cloning the repository
-
---> Clone the repository using the command below :
-```bash
-git clone https://github.com/divanov11/StudyBud.git
-
 ```
 
 --> Move into the directory where we have the project files : 
 ```bash
-cd StudyBud
+cd e-commerce
 
 ```
 
@@ -40,6 +30,18 @@ pip install -r requirements.txt
 
 ```
 
+--> make migrations :
+```bash
+py manage.py makemigrations
+
+```
+
+--> migrate :
+```bash
+py manage.py migrate
+
+```
+
 #
 
 ### Running the App
@@ -62,7 +64,7 @@ python manage.py runserver
 &nbsp; 
 <br>
 <p align="center">
-  Feed Home
+  Home
 </p>
 <img src="https://user-images.githubusercontent.com/72341453/134747262-0a92233d-8010-40f8-84c5-8d94895aac44.PNG">
 </td> 
